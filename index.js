@@ -72,5 +72,5 @@ cron.schedule("59 23 * * *", async () => {
 });
 
 app.listen(3000, () => {
-  console.log(`Taskmaster Backend listening on port ${port}...`);
+  console.log(`Taskmaster Backend listening on port ...`);
 });
