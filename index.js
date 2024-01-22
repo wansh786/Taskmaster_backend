@@ -9,11 +9,11 @@ const connectToMongo = require("./db");
 
 connectToMongo();
 const app = express();
-const port = process.env.PORT || 3000; 
+// const port = process.env.PORT || 3000; 
 
 app.use(
   cors({
-    origin:true || `${process.env.CLIENT_URL}`,
+    origin:true,
     credentials: true,
   })
 );
@@ -71,6 +71,6 @@ cron.schedule("59 23 * * *", async () => {
   timezone: "Asia/Kolkata"
 });
 
-app.listen(port, () => {
+app.listen(3000, () => {
   console.log(`Taskmaster Backend listening on port ${port}...`);
 });
