@@ -15,7 +15,7 @@ const assignToken = (user) => {
     },
   };
 
-  const authtoken = jwt.sign(data, process.env.AUTH_SECRET_KEY, {
+  const authtoken = jwt.sign(data, "masai", {
     expiresIn: "15h",
   });
   return authtoken;

@@ -5,7 +5,7 @@ const tokenAuth = (req, res, next) => {
   const token = req.cookies.authToken;
 
   if (token) {
-    jwt.verify(token, process.env.AUTH_SECRET_KEY, (err, data) => {
+    jwt.verify(token, "masai", (err, data) => {
       if (err) {
         // The HTTP 403 Forbidden response status code indicates that the server understands the request but refuses to authorize it.
         return res.sendStatus(403);
