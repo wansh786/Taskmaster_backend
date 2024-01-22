@@ -27,6 +27,9 @@ app.use("/todolist", require("./routes/toDoList"));
 app.use("/todo", require("./routes/toDo"));
 app.use("/edit", require("./routes/edit"));
 app.use("/deleteuser", require("./routes/deleteUser"));
+app.use('/',(req,res)=>{
+  res.send({msg:"welcome"})
+})
 
 // Schedule a task to run daily at midnight to update "My Day"
 cron.schedule("0 0 * * *", async () => {
@@ -74,3 +77,4 @@ cron.schedule("59 23 * * *", async () => {
 app.listen(3000, () => {
   console.log(`Taskmaster Backend listening on port ...`);
 });
+ 
